@@ -9,7 +9,7 @@ def check(codeString, filename):
     info.dwFlags |= subprocess.STARTF_USESHOWWINDOW
     info.wShowWindow = subprocess.SW_HIDE
 
-  process = subprocess.Popen(('ruby', '-wc'), 
+  process = subprocess.Popen((os.system('which rvm-auto-ruby') and 'rvm-auto-ruby' or 'ruby', '-wc'),
                 stdin=subprocess.PIPE, 
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
